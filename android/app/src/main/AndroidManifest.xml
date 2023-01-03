@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dziennik_kierowcy2">
+    package="com.szymonmatecki.dziennik_kierowcy2">
    <application
         android:label="dziennik_kierowcy2"
         android:name="${applicationName}"
