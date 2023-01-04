@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -32,29 +33,33 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dziennik kierowcy'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 70, 70, 70),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-        backgroundColor: const Color.fromARGB(255, 1, 209, 192),
-      ),
-      body: ListView(
-        children: const [
-          WorkWidget('Dzień pracy 1'),
-          WorkWidget('Dzień pracy 2'),
-          WorkWidget('Dzień pracy 3'),
-          WorkWidget('Dzień pracy 4'),
-          WorkWidget('Dzień pracy 5'),
-          WorkWidget('Dzień pracy 6'),
-          WorkWidget('Dzień pracy 7'),
-        ],
-      ),
-    );
+    return StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          final user = snapshot.data;
+          if (user == null) {
+            return const Scaffold(
+              body: Center(
+                child: Text('Jesteś nie zalogowany'),
+              ),
+            );
+          }
+          return Scaffold(
+            body: Center(
+              child: Text('Jesteś zalogowany jako ${user.email}'),
+            ),
+            appBar: AppBar(
+              title: const Text('Dziennik kierowcy'),
+              centerTitle: true,
+              backgroundColor: const Color.fromARGB(255, 70, 70, 70),
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {},
+              child: const Icon(Icons.add),
+              backgroundColor: const Color.fromARGB(255, 1, 209, 192),
+            ),
+          );
+        });
   }
 }
 
