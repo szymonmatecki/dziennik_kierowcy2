@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'app/home/home_page.dart';
+import 'app/login/login_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -21,13 +23,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const RootPage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({
+class RootPage extends StatelessWidget {
+  const RootPage({
     Key? key,
   }) : super(key: key);
 
@@ -38,46 +40,9 @@ class HomePage extends StatelessWidget {
         builder: (context, snapshot) {
           final user = snapshot.data;
           if (user == null) {
-            return const Scaffold(
-              body: Center(
-                child: Text('Jesteś nie zalogowany'),
-              ),
-            );
+            return const LoginPage();
           }
-          return Scaffold(
-            body: Center(
-              child: Text('Jesteś zalogowany jako ${user.email}'),
-            ),
-            appBar: AppBar(
-              title: const Text('Dziennik kierowcy'),
-              centerTitle: true,
-              backgroundColor: const Color.fromARGB(255, 70, 70, 70),
-            ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {},
-              child: const Icon(Icons.add),
-              backgroundColor: const Color.fromARGB(255, 1, 209, 192),
-            ),
-          );
+          return HomePage(user: user);
         });
-  }
-}
-
-class WorkWidget extends StatelessWidget {
-  const WorkWidget(
-    this.title, {
-    Key? key,
-  }) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromARGB(255, 146, 152, 156),
-      padding: const EdgeInsets.all(30),
-      margin: const EdgeInsets.all(15),
-      child: Text(title),
-    );
   }
 }
