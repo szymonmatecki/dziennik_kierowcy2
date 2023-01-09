@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 99, 98, 98),
       body: Center(
         child: Text('Jesteś zalogowany jako ${user.email}'),
       ),
