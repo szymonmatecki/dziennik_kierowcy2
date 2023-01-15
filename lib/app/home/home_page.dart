@@ -14,7 +14,22 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 99, 98, 98),
       body: Center(
-        child: Text('Jesteś zalogowany jako ${user.email}'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Jesteś zalogowany jako ${user.email}'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              child: Text('Wyloguj'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 1, 209, 192),
+              ),
+            )
+          ],
+        ),
       ),
       appBar: AppBar(
         title: const Text('Dziennik kierowcy'),

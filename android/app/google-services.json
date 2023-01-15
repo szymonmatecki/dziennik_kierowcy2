@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "664011785618",
-    "project_id": "dziennikkierowcy2",
-    "storage_bucket": "dziennikkierowcy2.appspot.com"
+    "project_number": "313090085620",
+    "project_id": "dziennikkierowcy-ca3d2",
+    "storage_bucket": "dziennikkierowcy-ca3d2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:664011785618:android:32b35d37bd8e3960076d4b",
+        "mobilesdk_app_id": "1:313090085620:android:49ca111f9d1138018504a1",
         "android_client_info": {
           "package_name": "com.szymonmatecki.dziennik_kierowcy2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "664011785618-m7fkfc788i9fc9o88olat08s9n944jbq.apps.googleusercontent.com",
+          "client_id": "313090085620-jlm6e4ss3f35q1fug1ruikd017f65fgl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDjx3nSn3pqUM3zJAwXcMIjxg0uMrO8c1g"
+          "current_key": "AIzaSyA26VC5WW59qE6O-xOtXr4w3BBGccXWB94"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "664011785618-m7fkfc788i9fc9o88olat08s9n944jbq.apps.googleusercontent.com",
+              "client_id": "313090085620-jlm6e4ss3f35q1fug1ruikd017f65fgl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC6KtIEA0IwfalSwlC9Nu8C1y0fvV1NYkc',
-    appId: '1:664011785618:web:09485e0e63f51bf4076d4b',
-    messagingSenderId: '664011785618',
-    projectId: 'dziennikkierowcy2',
-    authDomain: 'dziennikkierowcy2.firebaseapp.com',
-    storageBucket: 'dziennikkierowcy2.appspot.com',
+    apiKey: 'AIzaSyCN6jyrt4lv-Py-Qe6suFJZ7jYx4rU8YEw',
+    appId: '1:313090085620:web:a35280c267304f5e8504a1',
+    messagingSenderId: '313090085620',
+    projectId: 'dziennikkierowcy-ca3d2',
+    authDomain: 'dziennikkierowcy-ca3d2.firebaseapp.com',
+    storageBucket: 'dziennikkierowcy-ca3d2.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDjx3nSn3pqUM3zJAwXcMIjxg0uMrO8c1g',
-    appId: '1:664011785618:android:32b35d37bd8e3960076d4b',
-    messagingSenderId: '664011785618',
-    projectId: 'dziennikkierowcy2',
-    storageBucket: 'dziennikkierowcy2.appspot.com',
+    apiKey: 'AIzaSyA26VC5WW59qE6O-xOtXr4w3BBGccXWB94',
+    appId: '1:313090085620:android:49ca111f9d1138018504a1',
+    messagingSenderId: '313090085620',
+    projectId: 'dziennikkierowcy-ca3d2',
+    storageBucket: 'dziennikkierowcy-ca3d2.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD_pzAmT33VE3DaeUPLxKxdR44ecbVW7Pg',
-    appId: '1:664011785618:ios:752a4e8a9f7c4100076d4b',
-    messagingSenderId: '664011785618',
-    projectId: 'dziennikkierowcy2',
-    storageBucket: 'dziennikkierowcy2.appspot.com',
-    iosClientId: '664011785618-8ap05cg0b2m414fe7huan7m4gmge5651.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCRUrQJej-PNKTQwH6qrf4oaJ4uPrSTnJw',
+    appId: '1:313090085620:ios:e6d7656eaf68e2778504a1',
+    messagingSenderId: '313090085620',
+    projectId: 'dziennikkierowcy-ca3d2',
+    storageBucket: 'dziennikkierowcy-ca3d2.appspot.com',
+    iosClientId: '313090085620-uhmal6f9nsjoi6hibt8lfgev3564fbtn.apps.googleusercontent.com',
     iosBundleId: 'com.szymonmatecki.dziennikKierowcy2',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD_pzAmT33VE3DaeUPLxKxdR44ecbVW7Pg',
-    appId: '1:664011785618:ios:752a4e8a9f7c4100076d4b',
-    messagingSenderId: '664011785618',
-    projectId: 'dziennikkierowcy2',
-    storageBucket: 'dziennikkierowcy2.appspot.com',
-    iosClientId: '664011785618-8ap05cg0b2m414fe7huan7m4gmge5651.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCRUrQJej-PNKTQwH6qrf4oaJ4uPrSTnJw',
+    appId: '1:313090085620:ios:e6d7656eaf68e2778504a1',
+    messagingSenderId: '313090085620',
+    projectId: 'dziennikkierowcy-ca3d2',
+    storageBucket: 'dziennikkierowcy-ca3d2.appspot.com',
+    iosClientId: '313090085620-uhmal6f9nsjoi6hibt8lfgev3564fbtn.apps.googleusercontent.com',
     iosBundleId: 'com.szymonmatecki.dziennikKierowcy2',
   );
 }
