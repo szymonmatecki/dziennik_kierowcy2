@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'add_work/add_work_page_content.dart';
+import 'add_work/work_page_content.dart';
 import 'my_account/my_account_page_content.dart';
-import 'work_day/work_day_page_content.dart';
+import 'work_day/add_work_day_page_content.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({
+  const HomePage({
     Key? key,
     required this.user,
   }) : super(key: key);

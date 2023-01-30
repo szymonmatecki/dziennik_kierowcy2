@@ -1,8 +1,7 @@
+// ignore_for_file: sort_child_properties_last
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-
 
 class MyAccountPageContent extends StatelessWidget {
   const MyAccountPageContent({
@@ -24,7 +23,7 @@ class MyAccountPageContent extends StatelessWidget {
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            child: Text('Wyloguj'),
+            child: const Text('Wyloguj'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 1, 209, 192),
             ),

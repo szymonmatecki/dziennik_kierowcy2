@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-
-
 class WorkDayPageContent extends StatelessWidget {
   const WorkDayPageContent({
     Key? key,
@@ -11,7 +9,10 @@ class WorkDayPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: FirebaseFirestore.instance.collection('workday').snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('workday')
+            .orderBy('day')
+            .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return const Center(child: Text('Something went wrong'));
@@ -30,13 +31,14 @@ class WorkDayPageContent extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(document['Godzina rozpoczęcia'].toString()),
-                      Text(document['Godzina zakończenia'].toString()),
-                      Text(document['Miejsce rozpoczęcia']),
-                      Text(document['Miejsce zakończenia']),
-                      Text(document['Stan licznika końcowy'].toString()),
-                      Text(document['Stan licznika początkowy'].toString()),
-                      Text(document['Suma kilometrów'].toString()),
+                      Text(document['day'].toString()),
+                      Text(document['starttime'].toString()),
+                      Text(document['stoptime'].toString()),
+                      Text(document['startplace']),
+                      Text(document['stopplace']),
+                      Text(document['stopcounterstatus'].toString()),
+                      Text(document['startcounterstatus'].toString()),
+                      Text(document['totalkilometers'].toString()),
                     ],
                   ),
                 ),

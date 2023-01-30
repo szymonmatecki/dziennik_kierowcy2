@@ -89,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                 if (isCreatingAccount == false) ...[
                   TextButton(
                     style: TextButton.styleFrom(
+                      // ignore: prefer_const_constructors
                       primary: Color.fromARGB(255, 253, 253, 253),
                     ),
                     onPressed: () {
@@ -96,12 +97,13 @@ class _LoginPageState extends State<LoginPage> {
                         isCreatingAccount = true;
                       });
                     },
-                    child: Text('Utwórz konto'),
+                    child: const Text('Utwórz konto'),
                   ),
                 ],
                 if (isCreatingAccount == true) ...[
                   TextButton(
                     style: TextButton.styleFrom(
+                      // ignore: prefer_const_constructors
                       primary: Color.fromARGB(255, 253, 253, 253),
                     ),
                     onPressed: () {
@@ -109,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                         isCreatingAccount = false;
                       });
                     },
-                    child: Text('Masz już konto?'),
+                    child: const Text('Masz już konto?'),
                   ),
                 ],
               ],
