@@ -1,4 +1,4 @@
-import 'package:dziennik_kierowcy2/app/home/work_day/cubit/work_day_cubit.dart';
+import 'package:dziennik_kierowcy2/app/features/home/work_day/cubit/work_day_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../add_work_day/add_work_day_page_content.dart';

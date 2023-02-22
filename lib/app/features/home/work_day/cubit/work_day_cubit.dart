@@ -42,7 +42,7 @@ class WorkDayCubit extends Cubit<WorkDayState> {
       ..onError((error) {
         emit(
           WorkDayState(
-            documents: [],
+            documents: const [],
             isLoading: false,
             errorMessage: error.toString(),
           ),
