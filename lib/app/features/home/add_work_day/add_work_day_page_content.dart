@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last
+
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +64,7 @@ class _AddWorkDayContentState extends State<AddWorkDayContent> {
                       },
                       onChanged: (newValue) {
                         setState(() {
-                          starttime = newValue;
+                          day = newValue;
                         });
                       }),
                   const SizedBox(height: 8),
@@ -189,7 +189,7 @@ class _AddWorkDayContentState extends State<AddWorkDayContent> {
                         'totalkilometers': totalkilometers,
                       });
                     },
-                    child: const Text('Dodaj'),
+                    child:  const Text('Dodaj'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 1, 209, 192),
                     ),

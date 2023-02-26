@@ -1,6 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dziennik_kierowcy2/app/home/work_day/add_work_day_page_content.dart';
+import 'package:dziennik_kierowcy2/app/features/home/work_day/cubit/work_day_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../add_work_day/add_work_day_page_content.dart';
 
 class WorkDayPageContent extends StatelessWidget {
   const WorkDayPageContent({
@@ -8,20 +9,24 @@ class WorkDayPageContent extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: FirebaseFirestore.instance
-            .collection('workday')
-            .orderBy('day')
-            .snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const Center(child: Text('Something went wrong'));
+    return BlocProvider(
+      create: (context) => WorkDayCubit()..start(),
+      child: BlocBuilder<WorkDayCubit, WorkDayState>(
+        builder: (context, state) {
+          if (state.errorMessage.isNotEmpty) {
+            return Center(
+              child: Text(
+                'Something went wrong: ${state.errorMessage}',
+              ),
+            );
           }
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: Text('Loading'));
+          if (state.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(color: Colors.white),
+            );
           }
 
-          final documents = snapshot.data!.docs;
+          final documents = state.documents;
 
           return ListView(
             children: [
@@ -51,43 +56,43 @@ class WorkDayPageContent extends StatelessWidget {
                         children: [
                           Text(
                             document['day'].toString(),
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['starttime'].toString(),
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['stoptime'].toString(),
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['startplace'],
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['stopplace'],
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['bordername'],
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['stopcounterstatus'].toString(),
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['startcounterstatus'].toString(),
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['placeloadingunloading'],
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                           Text(
                             document['totalkilometers'].toString(),
-                            style: const TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 18),
                           ),
                         ],
                       ),
@@ -97,6 +102,8 @@ class WorkDayPageContent extends StatelessWidget {
               ],
             ],
           );
-        });
+        },
+      ),
+    );
   }
 }
