@@ -15,7 +15,7 @@ class WorkDayCubit extends Cubit<WorkDayState> {
           ),
         );
 
-  StreamSubscription? _streamSubsciption;
+  StreamSubscription? _streamSubscription;
 
   Future<void> start() async {
     emit(
@@ -26,7 +26,7 @@ class WorkDayCubit extends Cubit<WorkDayState> {
       ),
     );
 
-    _streamSubsciption = FirebaseFirestore.instance
+    _streamSubscription = FirebaseFirestore.instance
         .collection('workday')
         .orderBy('day')
         .snapshots()
@@ -52,7 +52,7 @@ class WorkDayCubit extends Cubit<WorkDayState> {
 
   @override
   Future<void> close() {
-    _streamSubsciption?.cancel();
+    _streamSubscription?.cancel();
     return super.close();
   }
 }
